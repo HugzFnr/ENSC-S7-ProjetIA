@@ -1,0 +1,5 @@
+H:\2A\IA\Projet IA\ENSC-S7-ProjetIA\Projet-IA-Fournier-Nicol\test\bin\Debug\test.exe.config
+H:\2A\IA\Projet IA\ENSC-S7-ProjetIA\Projet-IA-Fournier-Nicol\test\bin\Debug\test.exe
+H:\2A\IA\Projet IA\ENSC-S7-ProjetIA\Projet-IA-Fournier-Nicol\test\bin\Debug\test.pdb
+H:\2A\IA\Projet IA\ENSC-S7-ProjetIA\Projet-IA-Fournier-Nicol\test\obj\Debug\test.exe
+H:\2A\IA\Projet IA\ENSC-S7-ProjetIA\Projet-IA-Fournier-Nicol\test\obj\Debug\test.pdb
