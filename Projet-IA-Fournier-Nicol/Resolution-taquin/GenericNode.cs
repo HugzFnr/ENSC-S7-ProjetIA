@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Pluscourtchemin
+namespace Resolution_taquin
 {
     // classe abstraite, il est donc impératif de créer une classe qui en hérite
     // pour résoudre un problème particulier en y ajoutant des infos liées au contexte du problème

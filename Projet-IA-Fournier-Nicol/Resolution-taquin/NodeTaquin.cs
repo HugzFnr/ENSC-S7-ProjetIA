@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Resolution_taquin
 {
-    class NodeTaquin
+    class NodeTaquin : GenericNode
     {
+        public int tailleTaquin { get; private set; }
+        public int[][] state { get; set; }
+
+        public NodeTaquin (int taille)
+        {
+            //state = new int[taille][taille];
+        }
     }
 }
