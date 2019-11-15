@@ -14,7 +14,6 @@ namespace Resolution_taquin
     {
         static Random r;
         public int[,] Board { get; set; }
-        public TextBox[] Boutons { get; set; }
         public FormTaquin3X3()
         {
             InitializeComponent();
