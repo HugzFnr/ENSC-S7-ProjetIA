@@ -12,13 +12,45 @@ namespace Resolution_taquin
 {
     public partial class FormTaquin3X3 : Form
     {
+        static Random r;
         public int[,] Board { get; set; }
         public TextBox[] Boutons { get; set; }
         public FormTaquin3X3()
         {
             InitializeComponent();
             Board = new int[3, 3];
-            Random r = new Random();
+            r = new Random();
+            genererTaquinExemple();
+        }
+
+        public void RemplirTaquin()
+        {
+            tbTaquin0.Text = Board[0, 0].ToString();
+            tbTaquin1.Text = Board[0, 1].ToString();
+            tbTaquin2.Text = Board[0, 2].ToString();
+            tbTaquin3.Text = Board[1, 0].ToString();
+            tbTaquin4.Text = Board[1, 1].ToString();
+            tbTaquin5.Text = Board[1, 2].ToString();
+            tbTaquin6.Text = Board[2, 0].ToString();
+            tbTaquin7.Text = Board[2, 1].ToString();
+            tbTaquin8.Text = Board[2, 2].ToString();
+        }
+
+        private void btnResoudre_Click(object sender, EventArgs e)
+        {
+            SearchTree newTree = new SearchTree();
+            newTree.RechercheSolutionAEtoile(new NodeTaquin(Board));
+            System.Diagnostics.Debug.Write("fini");
+        }
+
+        private void btnInitTaquin_Click(object sender, EventArgs e)
+        {
+
+            genererTaquinExemple();
+        }
+
+        private void genererTaquinExemple()
+        {
             int alea = r.Next(3);
             if (alea == 0)
             {
@@ -58,26 +90,6 @@ namespace Resolution_taquin
             }
 
             RemplirTaquin();
-        }
-
-        public void RemplirTaquin()
-        {
-            tbTaquin0.Text = Board[0, 0].ToString();
-            tbTaquin1.Text = Board[0, 1].ToString();
-            tbTaquin2.Text = Board[0, 2].ToString();
-            tbTaquin3.Text = Board[1, 0].ToString();
-            tbTaquin4.Text = Board[1, 1].ToString();
-            tbTaquin5.Text = Board[1, 2].ToString();
-            tbTaquin6.Text = Board[2, 0].ToString();
-            tbTaquin7.Text = Board[2, 1].ToString();
-            tbTaquin8.Text = Board[2, 2].ToString();
-        }
-
-        private void btnResoudre_Click(object sender, EventArgs e)
-        {
-            SearchTree newTree = new SearchTree();
-            newTree.RechercheSolutionAEtoile(new NodeTaquin(Board));
-            System.Diagnostics.Debug.Write("fini");
         }
     }
 }

@@ -319,6 +319,7 @@
             this.btnInitTaquin.TabIndex = 2;
             this.btnInitTaquin.Text = "Initialiser le taquin";
             this.btnInitTaquin.UseVisualStyleBackColor = true;
+            this.btnInitTaquin.Click += new System.EventHandler(this.btnInitTaquin_Click);
             // 
             // FormTaquin3X3
             // 
