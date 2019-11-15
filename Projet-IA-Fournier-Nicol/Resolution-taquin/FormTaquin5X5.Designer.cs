@@ -67,8 +67,12 @@
             this.tbTaquin0 = new System.Windows.Forms.TextBox();
             this.lblInitTaquin = new System.Windows.Forms.Label();
             this.lblTitre = new System.Windows.Forms.Label();
+            this.gbAction = new System.Windows.Forms.GroupBox();
+            this.btnResoudre = new System.Windows.Forms.Button();
+            this.btnInitTaquin = new System.Windows.Forms.Button();
             this.gbResultats.SuspendLayout();
             this.gbTaquin.SuspendLayout();
+            this.gbAction.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblArbreExploration
@@ -97,15 +101,15 @@
             // 
             this.trArbreExploration.Location = new System.Drawing.Point(481, 136);
             this.trArbreExploration.Name = "trArbreExploration";
-            this.trArbreExploration.Size = new System.Drawing.Size(121, 368);
+            this.trArbreExploration.Size = new System.Drawing.Size(121, 264);
             this.trArbreExploration.TabIndex = 13;
             // 
             // lbCoupGagner
             // 
             this.lbCoupGagner.FormattingEnabled = true;
-            this.lbCoupGagner.Location = new System.Drawing.Point(329, 136);
+            this.lbCoupGagner.Location = new System.Drawing.Point(316, 136);
             this.lbCoupGagner.Name = "lbCoupGagner";
-            this.lbCoupGagner.Size = new System.Drawing.Size(120, 368);
+            this.lbCoupGagner.Size = new System.Drawing.Size(133, 264);
             this.lbCoupGagner.TabIndex = 12;
             // 
             // gbResultats
@@ -213,6 +217,7 @@
             this.tbTaquin24.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin24.Location = new System.Drawing.Point(199, 210);
             this.tbTaquin24.Name = "tbTaquin24";
+            this.tbTaquin24.ReadOnly = true;
             this.tbTaquin24.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin24.TabIndex = 24;
             this.tbTaquin24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -222,6 +227,7 @@
             this.tbTaquin23.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin23.Location = new System.Drawing.Point(155, 210);
             this.tbTaquin23.Name = "tbTaquin23";
+            this.tbTaquin23.ReadOnly = true;
             this.tbTaquin23.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin23.TabIndex = 23;
             this.tbTaquin23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -231,6 +237,7 @@
             this.tbTaquin22.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin22.Location = new System.Drawing.Point(111, 210);
             this.tbTaquin22.Name = "tbTaquin22";
+            this.tbTaquin22.ReadOnly = true;
             this.tbTaquin22.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin22.TabIndex = 22;
             this.tbTaquin22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -240,6 +247,7 @@
             this.tbTaquin21.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin21.Location = new System.Drawing.Point(67, 210);
             this.tbTaquin21.Name = "tbTaquin21";
+            this.tbTaquin21.ReadOnly = true;
             this.tbTaquin21.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin21.TabIndex = 21;
             this.tbTaquin21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -249,6 +257,7 @@
             this.tbTaquin20.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin20.Location = new System.Drawing.Point(22, 210);
             this.tbTaquin20.Name = "tbTaquin20";
+            this.tbTaquin20.ReadOnly = true;
             this.tbTaquin20.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin20.TabIndex = 20;
             this.tbTaquin20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -258,6 +267,7 @@
             this.tbTaquin19.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin19.Location = new System.Drawing.Point(198, 166);
             this.tbTaquin19.Name = "tbTaquin19";
+            this.tbTaquin19.ReadOnly = true;
             this.tbTaquin19.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin19.TabIndex = 19;
             this.tbTaquin19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -267,6 +277,7 @@
             this.tbTaquin18.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin18.Location = new System.Drawing.Point(154, 166);
             this.tbTaquin18.Name = "tbTaquin18";
+            this.tbTaquin18.ReadOnly = true;
             this.tbTaquin18.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin18.TabIndex = 18;
             this.tbTaquin18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -276,6 +287,7 @@
             this.tbTaquin17.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin17.Location = new System.Drawing.Point(110, 166);
             this.tbTaquin17.Name = "tbTaquin17";
+            this.tbTaquin17.ReadOnly = true;
             this.tbTaquin17.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin17.TabIndex = 17;
             this.tbTaquin17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -285,6 +297,7 @@
             this.tbTaquin16.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin16.Location = new System.Drawing.Point(66, 166);
             this.tbTaquin16.Name = "tbTaquin16";
+            this.tbTaquin16.ReadOnly = true;
             this.tbTaquin16.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin16.TabIndex = 16;
             this.tbTaquin16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -294,6 +307,7 @@
             this.tbTaquin15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin15.Location = new System.Drawing.Point(22, 166);
             this.tbTaquin15.Name = "tbTaquin15";
+            this.tbTaquin15.ReadOnly = true;
             this.tbTaquin15.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin15.TabIndex = 15;
             this.tbTaquin15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -303,6 +317,7 @@
             this.tbTaquin14.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin14.Location = new System.Drawing.Point(198, 122);
             this.tbTaquin14.Name = "tbTaquin14";
+            this.tbTaquin14.ReadOnly = true;
             this.tbTaquin14.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin14.TabIndex = 14;
             this.tbTaquin14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -312,6 +327,7 @@
             this.tbTaquin13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin13.Location = new System.Drawing.Point(154, 122);
             this.tbTaquin13.Name = "tbTaquin13";
+            this.tbTaquin13.ReadOnly = true;
             this.tbTaquin13.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin13.TabIndex = 13;
             this.tbTaquin13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -321,6 +337,7 @@
             this.tbTaquin12.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin12.Location = new System.Drawing.Point(110, 122);
             this.tbTaquin12.Name = "tbTaquin12";
+            this.tbTaquin12.ReadOnly = true;
             this.tbTaquin12.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin12.TabIndex = 12;
             this.tbTaquin12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -330,6 +347,7 @@
             this.tbTaquin11.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin11.Location = new System.Drawing.Point(66, 122);
             this.tbTaquin11.Name = "tbTaquin11";
+            this.tbTaquin11.ReadOnly = true;
             this.tbTaquin11.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin11.TabIndex = 11;
             this.tbTaquin11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -339,6 +357,7 @@
             this.tbTaquin10.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin10.Location = new System.Drawing.Point(22, 122);
             this.tbTaquin10.Name = "tbTaquin10";
+            this.tbTaquin10.ReadOnly = true;
             this.tbTaquin10.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin10.TabIndex = 10;
             this.tbTaquin10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -348,6 +367,7 @@
             this.tbTaquin9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin9.Location = new System.Drawing.Point(198, 78);
             this.tbTaquin9.Name = "tbTaquin9";
+            this.tbTaquin9.ReadOnly = true;
             this.tbTaquin9.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin9.TabIndex = 9;
             this.tbTaquin9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -357,6 +377,7 @@
             this.tbTaquin7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin7.Location = new System.Drawing.Point(110, 78);
             this.tbTaquin7.Name = "tbTaquin7";
+            this.tbTaquin7.ReadOnly = true;
             this.tbTaquin7.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin7.TabIndex = 8;
             this.tbTaquin7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -366,6 +387,7 @@
             this.tbTaquin8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin8.Location = new System.Drawing.Point(154, 78);
             this.tbTaquin8.Name = "tbTaquin8";
+            this.tbTaquin8.ReadOnly = true;
             this.tbTaquin8.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin8.TabIndex = 7;
             this.tbTaquin8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -375,6 +397,7 @@
             this.tbTaquin6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin6.Location = new System.Drawing.Point(66, 78);
             this.tbTaquin6.Name = "tbTaquin6";
+            this.tbTaquin6.ReadOnly = true;
             this.tbTaquin6.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin6.TabIndex = 6;
             this.tbTaquin6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -384,6 +407,7 @@
             this.tbTaquin5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin5.Location = new System.Drawing.Point(22, 78);
             this.tbTaquin5.Name = "tbTaquin5";
+            this.tbTaquin5.ReadOnly = true;
             this.tbTaquin5.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin5.TabIndex = 5;
             this.tbTaquin5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -393,6 +417,7 @@
             this.tbTaquin4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin4.Location = new System.Drawing.Point(198, 34);
             this.tbTaquin4.Name = "tbTaquin4";
+            this.tbTaquin4.ReadOnly = true;
             this.tbTaquin4.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin4.TabIndex = 4;
             this.tbTaquin4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -402,6 +427,7 @@
             this.tbTaquin3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin3.Location = new System.Drawing.Point(154, 34);
             this.tbTaquin3.Name = "tbTaquin3";
+            this.tbTaquin3.ReadOnly = true;
             this.tbTaquin3.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin3.TabIndex = 3;
             this.tbTaquin3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -411,6 +437,7 @@
             this.tbTaquin2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin2.Location = new System.Drawing.Point(110, 34);
             this.tbTaquin2.Name = "tbTaquin2";
+            this.tbTaquin2.ReadOnly = true;
             this.tbTaquin2.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin2.TabIndex = 2;
             this.tbTaquin2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -420,6 +447,7 @@
             this.tbTaquin1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin1.Location = new System.Drawing.Point(67, 34);
             this.tbTaquin1.Name = "tbTaquin1";
+            this.tbTaquin1.ReadOnly = true;
             this.tbTaquin1.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin1.TabIndex = 1;
             this.tbTaquin1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -429,6 +457,7 @@
             this.tbTaquin0.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin0.Location = new System.Drawing.Point(22, 34);
             this.tbTaquin0.Name = "tbTaquin0";
+            this.tbTaquin0.ReadOnly = true;
             this.tbTaquin0.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin0.TabIndex = 0;
             this.tbTaquin0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -453,11 +482,41 @@
             this.lblTitre.TabIndex = 8;
             this.lblTitre.Text = "Résolution de taquin 5X5";
             // 
+            // gbAction
+            // 
+            this.gbAction.Controls.Add(this.btnResoudre);
+            this.gbAction.Controls.Add(this.btnInitTaquin);
+            this.gbAction.Location = new System.Drawing.Point(316, 408);
+            this.gbAction.Name = "gbAction";
+            this.gbAction.Size = new System.Drawing.Size(292, 92);
+            this.gbAction.TabIndex = 16;
+            this.gbAction.TabStop = false;
+            this.gbAction.Text = "Actions";
+            // 
+            // btnResoudre
+            // 
+            this.btnResoudre.Location = new System.Drawing.Point(165, 34);
+            this.btnResoudre.Name = "btnResoudre";
+            this.btnResoudre.Size = new System.Drawing.Size(98, 39);
+            this.btnResoudre.TabIndex = 1;
+            this.btnResoudre.Text = "Résoudre";
+            this.btnResoudre.UseVisualStyleBackColor = true;
+            // 
+            // btnInitTaquin
+            // 
+            this.btnInitTaquin.Location = new System.Drawing.Point(35, 34);
+            this.btnInitTaquin.Name = "btnInitTaquin";
+            this.btnInitTaquin.Size = new System.Drawing.Size(98, 39);
+            this.btnInitTaquin.TabIndex = 0;
+            this.btnInitTaquin.Text = "Initialiser le taquin";
+            this.btnInitTaquin.UseVisualStyleBackColor = true;
+            // 
             // FormTaquin5X5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(620, 512);
+            this.Controls.Add(this.gbAction);
             this.Controls.Add(this.lblArbreExploration);
             this.Controls.Add(this.lblCoupGagner);
             this.Controls.Add(this.trArbreExploration);
@@ -472,6 +531,7 @@
             this.gbResultats.PerformLayout();
             this.gbTaquin.ResumeLayout(false);
             this.gbTaquin.PerformLayout();
+            this.gbAction.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -518,5 +578,8 @@
         private System.Windows.Forms.TextBox tbTaquin0;
         private System.Windows.Forms.Label lblInitTaquin;
         private System.Windows.Forms.Label lblTitre;
+        private System.Windows.Forms.GroupBox gbAction;
+        private System.Windows.Forms.Button btnResoudre;
+        private System.Windows.Forms.Button btnInitTaquin;
     }
 }

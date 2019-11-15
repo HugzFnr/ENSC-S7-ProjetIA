@@ -40,6 +40,9 @@
             this.tbTaquin1 = new System.Windows.Forms.TextBox();
             this.tbTaquin0 = new System.Windows.Forms.TextBox();
             this.gbResultats = new System.Windows.Forms.GroupBox();
+            this.lblNbNoeudsFermesRes = new System.Windows.Forms.Label();
+            this.lblNbNoeudsOuvertsRes = new System.Windows.Forms.Label();
+            this.lblTempsCalculRes = new System.Windows.Forms.Label();
             this.lblNoeudsFermes = new System.Windows.Forms.Label();
             this.lblNoeudsOuverts = new System.Windows.Forms.Label();
             this.lblTempsCalcul = new System.Windows.Forms.Label();
@@ -48,11 +51,12 @@
             this.trArbreExploration = new System.Windows.Forms.TreeView();
             this.lblCoupGagner = new System.Windows.Forms.Label();
             this.lblArbreExploration = new System.Windows.Forms.Label();
-            this.lblTempsCalculRes = new System.Windows.Forms.Label();
-            this.lblNbNoeudsOuvertsRes = new System.Windows.Forms.Label();
-            this.lblNbNoeudsFermesRes = new System.Windows.Forms.Label();
+            this.gbActions = new System.Windows.Forms.GroupBox();
+            this.btnResoudre = new System.Windows.Forms.Button();
+            this.btnInitTaquin = new System.Windows.Forms.Button();
             this.gbTaquin.SuspendLayout();
             this.gbResultats.SuspendLayout();
+            this.gbActions.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitre
@@ -88,6 +92,7 @@
             this.tbTaquin7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin7.Location = new System.Drawing.Point(75, 127);
             this.tbTaquin7.Name = "tbTaquin7";
+            this.tbTaquin7.ReadOnly = true;
             this.tbTaquin7.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin7.TabIndex = 8;
             this.tbTaquin7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -97,6 +102,7 @@
             this.tbTaquin8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin8.Location = new System.Drawing.Point(119, 127);
             this.tbTaquin8.Name = "tbTaquin8";
+            this.tbTaquin8.ReadOnly = true;
             this.tbTaquin8.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin8.TabIndex = 7;
             this.tbTaquin8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -106,6 +112,7 @@
             this.tbTaquin6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin6.Location = new System.Drawing.Point(31, 127);
             this.tbTaquin6.Name = "tbTaquin6";
+            this.tbTaquin6.ReadOnly = true;
             this.tbTaquin6.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin6.TabIndex = 6;
             this.tbTaquin6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -115,6 +122,7 @@
             this.tbTaquin5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin5.Location = new System.Drawing.Point(119, 83);
             this.tbTaquin5.Name = "tbTaquin5";
+            this.tbTaquin5.ReadOnly = true;
             this.tbTaquin5.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin5.TabIndex = 5;
             this.tbTaquin5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -124,6 +132,7 @@
             this.tbTaquin4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin4.Location = new System.Drawing.Point(75, 83);
             this.tbTaquin4.Name = "tbTaquin4";
+            this.tbTaquin4.ReadOnly = true;
             this.tbTaquin4.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin4.TabIndex = 4;
             this.tbTaquin4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -133,6 +142,7 @@
             this.tbTaquin3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin3.Location = new System.Drawing.Point(31, 83);
             this.tbTaquin3.Name = "tbTaquin3";
+            this.tbTaquin3.ReadOnly = true;
             this.tbTaquin3.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin3.TabIndex = 3;
             this.tbTaquin3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -142,6 +152,7 @@
             this.tbTaquin2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin2.Location = new System.Drawing.Point(119, 39);
             this.tbTaquin2.Name = "tbTaquin2";
+            this.tbTaquin2.ReadOnly = true;
             this.tbTaquin2.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin2.TabIndex = 2;
             this.tbTaquin2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -151,6 +162,7 @@
             this.tbTaquin1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin1.Location = new System.Drawing.Point(75, 39);
             this.tbTaquin1.Name = "tbTaquin1";
+            this.tbTaquin1.ReadOnly = true;
             this.tbTaquin1.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin1.TabIndex = 1;
             this.tbTaquin1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -160,6 +172,7 @@
             this.tbTaquin0.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.tbTaquin0.Location = new System.Drawing.Point(31, 39);
             this.tbTaquin0.Name = "tbTaquin0";
+            this.tbTaquin0.ReadOnly = true;
             this.tbTaquin0.Size = new System.Drawing.Size(38, 38);
             this.tbTaquin0.TabIndex = 0;
             this.tbTaquin0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -178,6 +191,30 @@
             this.gbResultats.TabIndex = 3;
             this.gbResultats.TabStop = false;
             this.gbResultats.Text = "Résultats";
+            // 
+            // lblNbNoeudsFermesRes
+            // 
+            this.lblNbNoeudsFermesRes.AutoSize = true;
+            this.lblNbNoeudsFermesRes.Location = new System.Drawing.Point(159, 71);
+            this.lblNbNoeudsFermesRes.Name = "lblNbNoeudsFermesRes";
+            this.lblNbNoeudsFermesRes.Size = new System.Drawing.Size(0, 13);
+            this.lblNbNoeudsFermesRes.TabIndex = 5;
+            // 
+            // lblNbNoeudsOuvertsRes
+            // 
+            this.lblNbNoeudsOuvertsRes.AutoSize = true;
+            this.lblNbNoeudsOuvertsRes.Location = new System.Drawing.Point(164, 47);
+            this.lblNbNoeudsOuvertsRes.Name = "lblNbNoeudsOuvertsRes";
+            this.lblNbNoeudsOuvertsRes.Size = new System.Drawing.Size(0, 13);
+            this.lblNbNoeudsOuvertsRes.TabIndex = 4;
+            // 
+            // lblTempsCalculRes
+            // 
+            this.lblTempsCalculRes.AutoSize = true;
+            this.lblTempsCalculRes.Location = new System.Drawing.Point(105, 25);
+            this.lblTempsCalculRes.Name = "lblTempsCalculRes";
+            this.lblTempsCalculRes.Size = new System.Drawing.Size(0, 13);
+            this.lblTempsCalculRes.TabIndex = 3;
             // 
             // lblNoeudsFermes
             // 
@@ -219,16 +256,16 @@
             // lbCoupGagner
             // 
             this.lbCoupGagner.FormattingEnabled = true;
-            this.lbCoupGagner.Location = new System.Drawing.Point(266, 126);
+            this.lbCoupGagner.Location = new System.Drawing.Point(254, 126);
             this.lbCoupGagner.Name = "lbCoupGagner";
-            this.lbCoupGagner.Size = new System.Drawing.Size(120, 290);
+            this.lbCoupGagner.Size = new System.Drawing.Size(132, 173);
             this.lbCoupGagner.TabIndex = 4;
             // 
             // trArbreExploration
             // 
-            this.trArbreExploration.Location = new System.Drawing.Point(418, 126);
+            this.trArbreExploration.Location = new System.Drawing.Point(418, 117);
             this.trArbreExploration.Name = "trArbreExploration";
-            this.trArbreExploration.Size = new System.Drawing.Size(121, 290);
+            this.trArbreExploration.Size = new System.Drawing.Size(121, 182);
             this.trArbreExploration.TabIndex = 5;
             // 
             // lblCoupGagner
@@ -253,35 +290,41 @@
             this.lblArbreExploration.Text = "Arbre\r\nd\'exploration";
             this.lblArbreExploration.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // lblTempsCalculRes
+            // gbActions
             // 
-            this.lblTempsCalculRes.AutoSize = true;
-            this.lblTempsCalculRes.Location = new System.Drawing.Point(105, 25);
-            this.lblTempsCalculRes.Name = "lblTempsCalculRes";
-            this.lblTempsCalculRes.Size = new System.Drawing.Size(0, 13);
-            this.lblTempsCalculRes.TabIndex = 3;
+            this.gbActions.Controls.Add(this.btnResoudre);
+            this.gbActions.Controls.Add(this.btnInitTaquin);
+            this.gbActions.Location = new System.Drawing.Point(254, 324);
+            this.gbActions.Name = "gbActions";
+            this.gbActions.Size = new System.Drawing.Size(285, 92);
+            this.gbActions.TabIndex = 8;
+            this.gbActions.TabStop = false;
+            this.gbActions.Text = "Actions";
             // 
-            // lblNbNoeudsOuvertsRes
+            // btnResoudre
             // 
-            this.lblNbNoeudsOuvertsRes.AutoSize = true;
-            this.lblNbNoeudsOuvertsRes.Location = new System.Drawing.Point(164, 47);
-            this.lblNbNoeudsOuvertsRes.Name = "lblNbNoeudsOuvertsRes";
-            this.lblNbNoeudsOuvertsRes.Size = new System.Drawing.Size(0, 13);
-            this.lblNbNoeudsOuvertsRes.TabIndex = 4;
+            this.btnResoudre.Location = new System.Drawing.Point(164, 34);
+            this.btnResoudre.Name = "btnResoudre";
+            this.btnResoudre.Size = new System.Drawing.Size(98, 39);
+            this.btnResoudre.TabIndex = 3;
+            this.btnResoudre.Text = "Résoudre";
+            this.btnResoudre.UseVisualStyleBackColor = true;
             // 
-            // lblNbNoeudsFermesRes
+            // btnInitTaquin
             // 
-            this.lblNbNoeudsFermesRes.AutoSize = true;
-            this.lblNbNoeudsFermesRes.Location = new System.Drawing.Point(159, 71);
-            this.lblNbNoeudsFermesRes.Name = "lblNbNoeudsFermesRes";
-            this.lblNbNoeudsFermesRes.Size = new System.Drawing.Size(0, 13);
-            this.lblNbNoeudsFermesRes.TabIndex = 5;
+            this.btnInitTaquin.Location = new System.Drawing.Point(23, 34);
+            this.btnInitTaquin.Name = "btnInitTaquin";
+            this.btnInitTaquin.Size = new System.Drawing.Size(98, 39);
+            this.btnInitTaquin.TabIndex = 2;
+            this.btnInitTaquin.Text = "Initialiser le taquin";
+            this.btnInitTaquin.UseVisualStyleBackColor = true;
             // 
             // FormTaquin3X3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 428);
+            this.Controls.Add(this.gbActions);
             this.Controls.Add(this.lblArbreExploration);
             this.Controls.Add(this.lblCoupGagner);
             this.Controls.Add(this.trArbreExploration);
@@ -299,6 +342,7 @@
             this.gbTaquin.PerformLayout();
             this.gbResultats.ResumeLayout(false);
             this.gbResultats.PerformLayout();
+            this.gbActions.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,5 +373,8 @@
         private System.Windows.Forms.Label lblNbNoeudsFermesRes;
         private System.Windows.Forms.Label lblNbNoeudsOuvertsRes;
         private System.Windows.Forms.Label lblTempsCalculRes;
+        private System.Windows.Forms.GroupBox gbActions;
+        private System.Windows.Forms.Button btnResoudre;
+        private System.Windows.Forms.Button btnInitTaquin;
     }
 }
