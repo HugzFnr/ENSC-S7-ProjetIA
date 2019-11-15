@@ -309,6 +309,7 @@
             this.btnResoudre.TabIndex = 3;
             this.btnResoudre.Text = "Résoudre";
             this.btnResoudre.UseVisualStyleBackColor = true;
+            this.btnResoudre.Click += new System.EventHandler(this.btnResoudre_Click);
             // 
             // btnInitTaquin
             // 

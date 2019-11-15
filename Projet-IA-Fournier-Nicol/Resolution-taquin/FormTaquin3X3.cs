@@ -72,5 +72,12 @@ namespace Resolution_taquin
             tbTaquin7.Text = Board[2, 1].ToString();
             tbTaquin8.Text = Board[2, 2].ToString();
         }
+
+        private void btnResoudre_Click(object sender, EventArgs e)
+        {
+            SearchTree newTree = new SearchTree();
+            newTree.RechercheSolutionAEtoile(new NodeTaquin(Board));
+            System.Diagnostics.Debug.Write("fini");
+        }
     }
 }
