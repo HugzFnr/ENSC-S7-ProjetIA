@@ -21,6 +21,8 @@ namespace Resolution_taquin
 
         public NodeTaquin(int[,] board) //priority
         {
+            ParentNode = null;
+            Enfants = new List<GenericNode>();
             NbHoles = 0;
             foreach (int i in board)
             {
@@ -99,10 +101,34 @@ namespace Resolution_taquin
                 {
                     if (state[i, j] == -1)
                     {
-                        if (i>0) possibilities.Add(new NodeTaquin(switch2numbers(i,j,i-1,j)));
-                        if (i < sizeTaquin - 1) possibilities.Add(new NodeTaquin(switch2numbers(i, j, i + 1, j)));
-                        if (j > 0) possibilities.Add(new NodeTaquin(switch2numbers(i, j, i, j - 1)));
-                        if (j < sizeTaquin - 1) possibilities.Add(new NodeTaquin(switch2numbers(i, j, i, j + 1)));
+                        if (i > 0)
+                        {
+                            NodeTaquin n1 = new NodeTaquin(switch2numbers(i, j, i - 1, j));
+                            n1.ParentNode = this;
+                            possibilities.Add(n1);
+                            Enfants.Add(n1);
+                        }
+                        if (i < sizeTaquin - 1)
+                        {
+                            NodeTaquin n2 = new NodeTaquin(switch2numbers(i, j, i + 1, j));
+                            n2.ParentNode = this;
+                            possibilities.Add(n2);
+                            Enfants.Add(n2);
+                        }
+                        if (j > 0)
+                        {
+                            NodeTaquin n3 = new NodeTaquin(switch2numbers(i, j, i, j - 1));
+                            n3.ParentNode = this;
+                            possibilities.Add(n3);
+                            Enfants.Add(n3);
+                        }
+                        if (j < sizeTaquin - 1)
+                        {
+                            NodeTaquin n4 = new NodeTaquin(switch2numbers(i, j, i, j + 1));
+                            n4.ParentNode = this;
+                            possibilities.Add(n4);
+                            Enfants.Add(n4);
+                        }
                         //then navigates the adjacent existing cells to create new NodeTaquins
                         //then add it to the possibilities list
                     }
@@ -125,7 +151,7 @@ namespace Resolution_taquin
                 if (k <= sizeTaquin*sizeTaquin - NbHoles && i != k) Hcost += 1;
                 else break;
             }
-            return Hcost;
+            return 0;
         }
         /// <summary>
         /// Returns the same board state but with the 2 cells switched
@@ -161,6 +187,13 @@ namespace Resolution_taquin
             return clone;
         }
 
-	}
+        public override string ToString()
+        {
+            string affich="";
+            foreach (int j in state) affich += j;
+            return affich;
+        }
+
+    }
 }
 

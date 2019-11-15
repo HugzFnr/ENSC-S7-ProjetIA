@@ -260,6 +260,7 @@
             this.lbCoupGagner.Name = "lbCoupGagner";
             this.lbCoupGagner.Size = new System.Drawing.Size(132, 173);
             this.lbCoupGagner.TabIndex = 4;
+            this.lbCoupGagner.SelectedIndexChanged += new System.EventHandler(this.lbCoupGagner_SelectedIndexChanged);
             // 
             // trArbreExploration
             // 

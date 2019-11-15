@@ -13,6 +13,9 @@ namespace Resolution_taquin
     public partial class FormTaquin3X3 : Form
     {
         static Random r;
+        List<GenericNode> N_ouverts;
+        List<GenericNode> N_fermes;
+
         public int[,] Board { get; set; }
         public FormTaquin3X3()
         {
@@ -38,13 +41,14 @@ namespace Resolution_taquin
         private void btnResoudre_Click(object sender, EventArgs e)
         {
             SearchTree newTree = new SearchTree();
-            newTree.RechercheSolutionAEtoile(new NodeTaquin(Board));
-            System.Diagnostics.Debug.Write("fini");
+            N_ouverts = newTree.RechercheSolutionAEtoile(new NodeTaquin(Board));
+            System.Diagnostics.Debug.Write(N_ouverts.Count);
+
+            lbCoupGagner.DataSource = N_ouverts;
         }
 
         private void btnInitTaquin_Click(object sender, EventArgs e)
         {
-
             genererTaquinExemple();
         }
 
@@ -89,6 +93,11 @@ namespace Resolution_taquin
             }
 
             RemplirTaquin();
+        }
+
+        private void lbCoupGagner_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
