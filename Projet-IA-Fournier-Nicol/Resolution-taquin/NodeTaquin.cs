@@ -21,7 +21,13 @@ namespace Resolution_taquin
 
         public NodeTaquin(int[,] board) //priority
         {
-            throw new NotImplementedException();
+            NbHoles = 0;
+            foreach (int i in board)
+            {
+                if (i == -1) NbHoles++;
+                sizeTaquin = board.GetLength(0);
+            }
+            state = shallowCopy(board, sizeTaquin);
         }
 
         /// <summary>
@@ -93,6 +99,10 @@ namespace Resolution_taquin
                 {
                     if (state[i, j] == -1)
                     {
+                        if (i>0) possibilities.Add(new NodeTaquin(switch2numbers(i,j,i-1,j)));
+                        if (i < sizeTaquin - 1) possibilities.Add(new NodeTaquin(switch2numbers(i, j, i + 1, j)));
+                        if (j > 0) possibilities.Add(new NodeTaquin(switch2numbers(i, j, i, j - 1)));
+                        if (j < sizeTaquin - 1) possibilities.Add(new NodeTaquin(switch2numbers(i, j, i, j + 1)));
                         //then navigates the adjacent existing cells to create new NodeTaquins
                         //then add it to the possibilities list
                     }
@@ -117,5 +127,40 @@ namespace Resolution_taquin
             }
             return Hcost;
         }
-    }
+        /// <summary>
+        /// Returns the same board state but with the 2 cells switched
+        /// </summary>
+        /// <returns></returns>
+        public int[,] switch2numbers(int i1, int j1, int i2, int j2)
+        {
+            int temp = state[i1, j1];
+            int[,] stateTemp = shallowCopy(state,sizeTaquin);
+
+            stateTemp[i1, j1] = stateTemp[i2, j2];
+            stateTemp[i2, j2] = stateTemp[i1, j1];
+
+            return stateTemp;
+        }
+
+        /// <summary>
+        /// Makes a shallow copy for 2 multidimensional arrays of the same dimensions
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public int[,] shallowCopy(int[,] source,int sizeTaquin)
+        {
+            int[,] clone = new int[sizeTaquin,sizeTaquin];
+            for (int i=0;i<sizeTaquin; i++)
+            {
+                for (int j=0;j<sizeTaquin;j++)
+                {
+                    clone[i, j] = source[i, j];
+                }
+            }
+
+            return clone;
+        }
+
+	}
 }
+
