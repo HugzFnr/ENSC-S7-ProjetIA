@@ -13,7 +13,6 @@ namespace Resolution_taquin
     public partial class FormTaquin3X3 : Form
     {
         public int[,] Board { get; set; }
-        public TextBox[] Boutons { get; set; }
         public FormTaquin3X3()
         {
             InitializeComponent();
