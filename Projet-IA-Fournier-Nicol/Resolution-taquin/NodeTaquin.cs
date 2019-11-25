@@ -122,7 +122,7 @@ namespace Resolution_taquin
                             possibilities.Add(n3);
                             Enfants.Add(n3);
                         }
-                        if (j < sizeTaquin - 1)
+                        if (j < sizeTaquin -1)
                         {
                             NodeTaquin n4 = new NodeTaquin(switch2numbers(i, j, i, j + 1));
                             n4.ParentNode = this;
@@ -149,9 +149,8 @@ namespace Resolution_taquin
             {
                 k++;
                 if (k <= sizeTaquin*sizeTaquin - NbHoles && i != k) Hcost += 1;
-                else break;
             }
-            return 0;
+            return Hcost;
         }
         /// <summary>
         /// Returns the same board state but with the 2 cells switched
@@ -162,8 +161,10 @@ namespace Resolution_taquin
             int temp = state[i1, j1];
             int[,] stateTemp = shallowCopy(state,sizeTaquin);
 
-            stateTemp[i1, j1] = stateTemp[i2, j2];
-            stateTemp[i2, j2] = stateTemp[i1, j1];
+            //System.Diagnostics.Debug.Write(i2);
+
+            stateTemp[i2, j2] = temp;
+            stateTemp[i1, j1] = state[i2, j2];
 
             return stateTemp;
         }
