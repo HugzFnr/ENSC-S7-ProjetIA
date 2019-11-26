@@ -40,11 +40,25 @@ namespace Resolution_taquin
 
         private void btnResoudre_Click(object sender, EventArgs e)
         {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+
             SearchTree newTree = new SearchTree();
             N_ouverts = newTree.RechercheSolutionAEtoile(new NodeTaquin(Board));
             System.Diagnostics.Debug.Write(N_ouverts.Count);
 
             lbCoupGagner.DataSource = N_ouverts;
+
+            lblNbNoeudsOuvertsRes.Text = newTree.CountInOpenList().ToString();
+            lblNbNoeudsFermesRes.Text = newTree.CountInClosedList().ToString();
+
+            watch.Stop();
+            TimeSpan ts = watch.Elapsed;
+            string elapsedTime = String.Format("{0:00}:{1:00}.{2:00}",
+            ts.Minutes, ts.Seconds,
+            ts.Milliseconds / 10);
+            lblTempsCalculRes.Text = elapsedTime;
+
+            newTree.GetSearchTree(trArbreExploration);
         }
 
         private void btnInitTaquin_Click(object sender, EventArgs e)
@@ -95,7 +109,7 @@ namespace Resolution_taquin
             RemplirTaquin();
         }
 
-        private void lbCoupGagner_SelectedIndexChanged(object sender, EventArgs e)
+        private void lblArbreExploration_Click(object sender, EventArgs e)
         {
 
         }
