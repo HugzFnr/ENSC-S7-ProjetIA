@@ -143,14 +143,31 @@ namespace Resolution_taquin
         /// <returns></returns>
         public override double CalculeHCost()
         {
+
             double Hcost = 0;
+
+            //Heuristique nb de cases mal remplies
+            //int k = 0;
+            //foreach (int i in state)
+            //{
+            //    k++;
+            //    if (k <= sizeTaquin*sizeTaquin - NbHoles && i != k) Hcost += 1;
+            //}
+
+            //Heuristique Manhattan
             int k = 0;
-            foreach (int i in state)
+            for (int i = 0; i < sizeTaquin; i++)
             {
-                k++;
-                if (k <= sizeTaquin*sizeTaquin - NbHoles && i != k) Hcost += 1;
+                for (int j = 0; j < sizeTaquin; j++)
+                {
+                    k++;
+                    if (k <= sizeTaquin * sizeTaquin - NbHoles && i != k) Hcost +=1; // pas final
+                }
             }
+
+
             return Hcost;
+
         }
         /// <summary>
         /// Returns the same board state but with the 2 cells switched
@@ -191,7 +208,11 @@ namespace Resolution_taquin
         public override string ToString()
         {
             string affich="";
-            foreach (int j in state) affich += j;
+            foreach (int j in state)
+            {
+                if (j == -1) affich += '*';
+                else affich += j;
+            }
             return affich;
         }
 
