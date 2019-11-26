@@ -260,13 +260,12 @@
             this.lbCoupGagner.Name = "lbCoupGagner";
             this.lbCoupGagner.Size = new System.Drawing.Size(132, 173);
             this.lbCoupGagner.TabIndex = 4;
-            this.lbCoupGagner.SelectedIndexChanged += new System.EventHandler(this.lbCoupGagner_SelectedIndexChanged);
             // 
             // trArbreExploration
             // 
             this.trArbreExploration.Location = new System.Drawing.Point(418, 117);
             this.trArbreExploration.Name = "trArbreExploration";
-            this.trArbreExploration.Size = new System.Drawing.Size(121, 182);
+            this.trArbreExploration.Size = new System.Drawing.Size(149, 182);
             this.trArbreExploration.TabIndex = 5;
             // 
             // lblCoupGagner
@@ -284,18 +283,19 @@
             // 
             this.lblArbreExploration.AutoSize = true;
             this.lblArbreExploration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblArbreExploration.Location = new System.Drawing.Point(432, 68);
+            this.lblArbreExploration.Location = new System.Drawing.Point(451, 68);
             this.lblArbreExploration.Name = "lblArbreExploration";
             this.lblArbreExploration.Size = new System.Drawing.Size(98, 40);
             this.lblArbreExploration.TabIndex = 7;
             this.lblArbreExploration.Text = "Arbre\r\nd\'exploration";
             this.lblArbreExploration.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblArbreExploration.Click += new System.EventHandler(this.lblArbreExploration_Click);
             // 
             // gbActions
             // 
             this.gbActions.Controls.Add(this.btnResoudre);
             this.gbActions.Controls.Add(this.btnInitTaquin);
-            this.gbActions.Location = new System.Drawing.Point(254, 324);
+            this.gbActions.Location = new System.Drawing.Point(264, 324);
             this.gbActions.Name = "gbActions";
             this.gbActions.Size = new System.Drawing.Size(285, 92);
             this.gbActions.TabIndex = 8;
@@ -326,7 +326,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 428);
+            this.ClientSize = new System.Drawing.Size(579, 428);
             this.Controls.Add(this.gbActions);
             this.Controls.Add(this.lblArbreExploration);
             this.Controls.Add(this.lblCoupGagner);
