@@ -215,7 +215,7 @@ namespace Resolution_taquin
                     //}
 
                 }
-            }*/
+            }
 
             return Hcost;
 

@@ -60,7 +60,7 @@ namespace Resolution_taquin
                 }
                 lblNbNoeudsOuvertsRes.Text = g.CountInOpenList().ToString();
                 lblNbNoeudsFermesRes.Text = g.CountInClosedList().ToString();
-                //g.GetSearchTree(trArbreExploration);
+                g.GetSearchTree(trArbreExploration);
             }
         }
 
