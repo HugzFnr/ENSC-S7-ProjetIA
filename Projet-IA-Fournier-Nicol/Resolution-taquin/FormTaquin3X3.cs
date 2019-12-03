@@ -13,8 +13,6 @@ namespace Resolution_taquin
     public partial class FormTaquin3X3 : Form
     {
         static Random r;
-        List<GenericNode> N_ouverts;
-        List<GenericNode> N_fermes;
 
         public int[,] Board { get; set; }
         public FormTaquin3X3()
@@ -40,16 +38,13 @@ namespace Resolution_taquin
 
         private void btnResoudre_Click(object sender, EventArgs e)
         {
+           lbCoupGagner.Items.Clear();
+            SearchTree g = new SearchTree();
+            NodeTaquin N0 = new NodeTaquin(Board);
+
             var watch = System.Diagnostics.Stopwatch.StartNew();
 
-            SearchTree newTree = new SearchTree();
-            N_ouverts = newTree.RechercheSolutionAEtoile(new NodeTaquin(Board));
-            System.Diagnostics.Debug.Write(N_ouverts.Count);
-
-            lbCoupGagner.DataSource = N_ouverts;
-
-            lblNbNoeudsOuvertsRes.Text = newTree.CountInOpenList().ToString();
-            lblNbNoeudsFermesRes.Text = newTree.CountInClosedList().ToString();
+            List<GenericNode> Lres = g.RechercheSolutionAEtoile(N0);
 
             watch.Stop();
             TimeSpan ts = watch.Elapsed;
@@ -58,7 +53,16 @@ namespace Resolution_taquin
             ts.Milliseconds / 10);
             lblTempsCalculRes.Text = elapsedTime;
 
-            newTree.GetSearchTree(trArbreExploration);
+            if (Lres.Count != 0)
+            {
+                foreach (GenericNode N in Lres)
+                {
+                    lbCoupGagner.Items.Add(N);
+                }
+                lblNbNoeudsOuvertsRes.Text = g.CountInOpenList().ToString();
+                lblNbNoeudsFermesRes.Text = g.CountInClosedList().ToString();
+                g.GetSearchTree(trArbreExploration);
+            }
         }
 
         private void btnInitTaquin_Click(object sender, EventArgs e)
@@ -107,11 +111,6 @@ namespace Resolution_taquin
             }
 
             RemplirTaquin();
-        }
-
-        private void lblArbreExploration_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

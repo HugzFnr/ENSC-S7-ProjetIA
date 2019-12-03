@@ -157,7 +157,7 @@ namespace Resolution_taquin
         }
 
         /// <summary>
-        /// Returns the heuristic cost of this state, which is the number of wrong cells
+        /// Returns the heuristic cost of this state
         /// </summary>
         /// <returns></returns>
         public override double CalculeHCost()
@@ -177,7 +177,7 @@ namespace Resolution_taquin
             endState = new int[sizeTaquin, sizeTaquin];
 
             int k = 0;
-            for (int i = 0; i < sizeTaquin; i++)
+            foreach (int i in state)
             {
                 for (int j = 0; j < sizeTaquin; j++)
                 {
@@ -210,7 +210,6 @@ namespace Resolution_taquin
 
                 }
             }
-
 
             return Hcost;
 

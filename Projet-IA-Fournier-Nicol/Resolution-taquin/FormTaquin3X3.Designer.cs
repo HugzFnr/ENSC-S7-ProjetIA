@@ -289,7 +289,6 @@
             this.lblArbreExploration.TabIndex = 7;
             this.lblArbreExploration.Text = "Arbre\r\nd\'exploration";
             this.lblArbreExploration.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblArbreExploration.Click += new System.EventHandler(this.lblArbreExploration_Click);
             // 
             // gbActions
             // 

@@ -501,6 +501,7 @@
             this.btnResoudre.TabIndex = 1;
             this.btnResoudre.Text = "Résoudre";
             this.btnResoudre.UseVisualStyleBackColor = true;
+            this.btnResoudre.Click += new System.EventHandler(this.btnResoudre_Click);
             // 
             // btnInitTaquin
             // 
@@ -510,6 +511,7 @@
             this.btnInitTaquin.TabIndex = 0;
             this.btnInitTaquin.Text = "Initialiser le taquin";
             this.btnInitTaquin.UseVisualStyleBackColor = true;
+            this.btnInitTaquin.Click += new System.EventHandler(this.btnInitTaquin_Click);
             // 
             // FormTaquin5X5
             // 
