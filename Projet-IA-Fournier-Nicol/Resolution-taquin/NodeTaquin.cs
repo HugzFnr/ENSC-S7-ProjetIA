@@ -147,23 +147,23 @@ namespace Resolution_taquin
             double Hcost = 0;
 
             //Heuristique nb de cases mal remplies
-            //int k = 0;
-            //foreach (int i in state)
-            //{
-            //    k++;
-            //    if (k <= sizeTaquin*sizeTaquin - NbHoles && i != k) Hcost += 1;
-            //}
+            int k = 0;
+            foreach (int i in state)
+            {
+                k++;
+                if (k <= sizeTaquin * sizeTaquin - NbHoles && i != k) Hcost += 1;
+            }
 
             //Heuristique Manhattan
-            int k = 0;
-            for (int i = 0; i < sizeTaquin; i++)
-            {
-                for (int j = 0; j < sizeTaquin; j++)
-                {
-                    k++;
-                    if (k <= sizeTaquin * sizeTaquin - NbHoles && i != k) Hcost +=1; // pas final
-                }
-            }
+            //int k = 0;
+            //for (int i = 0; i < sizeTaquin; i++)
+            //{
+            //    for (int j = 0; j < sizeTaquin; j++)
+            //    {
+            //        k++;
+            //        if (k <= sizeTaquin * sizeTaquin - NbHoles && i != k) Hcost +=1; // pas final
+            //    }
+            //}
 
 
             return Hcost;
