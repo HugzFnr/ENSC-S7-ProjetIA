@@ -12,6 +12,8 @@ namespace Resolution_taquin
         public int[,] state { get; set; } //a board state is a [,] array with -1 if the cell is empty
         public int NbHoles { get; private set; } //the number of empty cells
 
+        public int[,] endState { get; private set; } //only used for Hcost
+
         public NodeTaquin (int size,int nbHoles) //not a priority, useful for a random generator of Taquin boards
         {
             state = new int[size,size];
@@ -30,6 +32,7 @@ namespace Resolution_taquin
                 sizeTaquin = board.GetLength(0);
             }
             state = shallowCopy(board, sizeTaquin);
+            
         }
 
         /// <summary>
@@ -136,6 +139,22 @@ namespace Resolution_taquin
             }
             return possibilities;
         }
+        public static Tuple<int, int> CoordinatesOf(int[,] matrix, int value)
+        {
+            int w = matrix.GetLength(0); // width
+            int h = matrix.GetLength(1); // height
+
+            for (int x = 0; x < w; ++x)
+            {
+                for (int y = 0; y < h; ++y)
+                {
+                    if (matrix[x, y].Equals(value))
+                        return Tuple.Create(x, y);
+                }
+            }
+
+            return Tuple.Create(-1, -1);
+        }
 
         /// <summary>
         /// Returns the heuristic cost of this state, which is the number of wrong cells
@@ -151,17 +170,44 @@ namespace Resolution_taquin
             //foreach (int i in state)
             //{
             //    k++;
-            //    if (k <= sizeTaquin*sizeTaquin - NbHoles && i != k) Hcost += 1;
+            //    if (k <= sizeTaquin * sizeTaquin - NbHoles && i != k) Hcost += 1;
             //}
 
             //Heuristique Manhattan
+            endState = new int[sizeTaquin, sizeTaquin];
+
             int k = 0;
             for (int i = 0; i < sizeTaquin; i++)
             {
                 for (int j = 0; j < sizeTaquin; j++)
                 {
                     k++;
-                    if (k <= sizeTaquin * sizeTaquin - NbHoles && i != k) Hcost +=1; // pas final
+                    if (k <= sizeTaquin * sizeTaquin - NbHoles)
+                    {
+                        endState[i, j] = k;
+                    }
+                    else
+                    {
+                        endState[i, j] = -1;
+                    }
+                    if (state[i, j] > 0)
+                    {
+                        Tuple<int, int> cordonnes = CoordinatesOf(endState, k);
+                        int xCible = cordonnes.Item1;
+                        int yCible = cordonnes.Item2;
+                        Hcost += Math.Abs(xCible - i);
+                        Hcost += Math.Abs(yCible - j);
+
+                    }
+                    else
+                    {
+                        Tuple<int, int> cordonnes = CoordinatesOf(endState, -1);
+                        int xCible = cordonnes.Item1;
+                        int yCible = cordonnes.Item2;
+                        Hcost += Math.Abs(xCible - i);
+                        Hcost += Math.Abs(yCible - j);
+                    }
+
                 }
             }
 
