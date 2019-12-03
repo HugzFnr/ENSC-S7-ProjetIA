@@ -8,11 +8,11 @@ namespace Resolution_taquin
 {
     class NodeTaquin : GenericNode
     {
-        public int sizeTaquin { get; private set; } //the number of cells in one column or one line
+        public int SizeTaquin { get; private set; } //the number of cells in one column or one line
         public int[,] state { get; set; } //a board state is a [,] array with -1 if the cell is empty
         public int NbHoles { get; private set; } //the number of empty cells
 
-        public int[,] endState { get; private set; } //only used for Hcost
+        public int[,] RefEndState { get; private set; } //only used for Hcost
 
         public NodeTaquin (int size,int nbHoles) //not a priority, useful for a random generator of Taquin boards
         {
@@ -23,15 +23,15 @@ namespace Resolution_taquin
 
         public NodeTaquin(int[,] board) //priority
         {
-            ParentNode = null;
+            //ParentNode = null;
             Enfants = new List<GenericNode>();
             NbHoles = 0;
             foreach (int i in board)
             {
                 if (i == -1) NbHoles++;
-                sizeTaquin = board.GetLength(0);
+                SizeTaquin = board.GetLength(0);
             }
-            state = shallowCopy(board, sizeTaquin);
+            state = shallowCopy(board, SizeTaquin);
             
         }
 
@@ -45,9 +45,9 @@ namespace Resolution_taquin
             if (N2 is NodeTaquin)
             {
                 NodeTaquin toCompare = (NodeTaquin)N2;
-                for (int i = 0; i < sizeTaquin; i++)
+                for (int i = 0; i < SizeTaquin; i++)
                 {
-                    for (int j = 0; j < sizeTaquin; j++)
+                    for (int j = 0; j < SizeTaquin; j++)
                     {
                         if (state[i, j] != toCompare.state[i, j]) return false;
                     }
@@ -77,7 +77,7 @@ namespace Resolution_taquin
             {
                 // a [,] array like { {1,2,3},{4,5,6}} is indeed read 1 2 3 4 5 6 in foreach loop
                 k++;
-                if (k <= sizeTaquin*sizeTaquin - NbHoles)
+                if (k <= SizeTaquin*SizeTaquin - NbHoles)
                 {
                     if (i != k) return false;
                 }
@@ -98,9 +98,9 @@ namespace Resolution_taquin
         public override List<GenericNode> GetListSucc()
         {
             List<GenericNode> possibilities = new List<GenericNode>();
-            for (int i = 0; i < sizeTaquin; i++)
+            for (int i = 0; i < SizeTaquin; i++)
             {
-                for (int j = 0; j < sizeTaquin; j++)
+                for (int j = 0; j < SizeTaquin; j++)
                 {
                     if (state[i, j] == -1)
                     {
@@ -111,7 +111,7 @@ namespace Resolution_taquin
                             possibilities.Add(n1);
                             Enfants.Add(n1);
                         }
-                        if (i < sizeTaquin - 1)
+                        if (i < SizeTaquin - 1)
                         {
                             NodeTaquin n2 = new NodeTaquin(switch2numbers(i, j, i + 1, j));
                             n2.ParentNode = this;
@@ -125,7 +125,7 @@ namespace Resolution_taquin
                             possibilities.Add(n3);
                             Enfants.Add(n3);
                         }
-                        if (j < sizeTaquin -1)
+                        if (j < SizeTaquin -1)
                         {
                             NodeTaquin n4 = new NodeTaquin(switch2numbers(i, j, i, j + 1));
                             n4.ParentNode = this;
@@ -139,16 +139,16 @@ namespace Resolution_taquin
             }
             return possibilities;
         }
-        public static Tuple<int, int> CoordinatesOf(int[,] matrix, int value)
+        public Tuple<int, int> CoordinatesOf(int[,] matrix, int value)
         {
-            int w = matrix.GetLength(0); // width
-            int h = matrix.GetLength(1); // height
+            int w = SizeTaquin; // width
+            int h = SizeTaquin; // height
 
-            for (int x = 0; x < w; ++x)
+            for (int x = 0; x < w; x++)
             {
-                for (int y = 0; y < h; ++y)
+                for (int y = 0; y < h; y++)
                 {
-                    if (matrix[x, y].Equals(value))
+                    if (matrix[x, y] == value)
                         return Tuple.Create(x, y);
                 }
             }
@@ -170,43 +170,49 @@ namespace Resolution_taquin
             //foreach (int i in state)
             //{
             //    k++;
-            //    if (k <= sizeTaquin * sizeTaquin - NbHoles && i != k) Hcost += 1;
+            //    if (k <= SizeTaquin * SizeTaquin - NbHoles && i != k) Hcost += 1;
             //}
 
             //Heuristique Manhattan
-            endState = new int[sizeTaquin, sizeTaquin];
+            RefEndState = new int[SizeTaquin, SizeTaquin];
 
             int k = 0;
-            foreach (int i in state)
+            for (int i = 0; i < SizeTaquin; i++)
             {
-                for (int j = 0; j < sizeTaquin; j++)
+                for (int j = 0; j < SizeTaquin; j++)
                 {
                     k++;
-                    if (k <= sizeTaquin * sizeTaquin - NbHoles)
+                    if (k <= SizeTaquin * SizeTaquin - NbHoles)
                     {
-                        endState[i, j] = k;
+                        RefEndState[i, j] = k;
                     }
                     else
                     {
-                        endState[i, j] = -1;
+                        RefEndState[i, j] = -1;
                     }
+                }
+            }
+            for (int i = 0; i < SizeTaquin; i++)
+            {
+                for (int j = 0; j < SizeTaquin; j++)
+                {
                     if (state[i, j] > 0)
                     {
-                        Tuple<int, int> cordonnes = CoordinatesOf(endState, k);
+                        Tuple<int, int> cordonnes = CoordinatesOf(RefEndState, state[i,j]);
                         int xCible = cordonnes.Item1;
                         int yCible = cordonnes.Item2;
                         Hcost += Math.Abs(xCible - i);
                         Hcost += Math.Abs(yCible - j);
 
                     }
-                    else
-                    {
-                        Tuple<int, int> cordonnes = CoordinatesOf(endState, -1);
-                        int xCible = cordonnes.Item1;
-                        int yCible = cordonnes.Item2;
-                        Hcost += Math.Abs(xCible - i);
-                        Hcost += Math.Abs(yCible - j);
-                    }
+                    //else
+                    //{
+                    //    Tuple<int, int> cordonnes = CoordinatesOf(RefEndState, -1);
+                    //    int xCible = cordonnes.Item1;
+                    //    int yCible = cordonnes.Item2;
+                    //    Hcost += Math.Abs(xCible - i);
+                    //    Hcost += Math.Abs(yCible - j);
+                    //}
 
                 }
             }
@@ -221,7 +227,7 @@ namespace Resolution_taquin
         public int[,] switch2numbers(int i1, int j1, int i2, int j2)
         {
             int temp = state[i1, j1];
-            int[,] stateTemp = shallowCopy(state,sizeTaquin);
+            int[,] stateTemp = shallowCopy(state,SizeTaquin);
 
             //System.Diagnostics.Debug.Write(i2);
 
