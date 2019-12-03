@@ -20,7 +20,6 @@ namespace Resolution_taquin
             InitializeComponent();
             Board = new int[3, 3];
             r = new Random();
-            genererTaquinExemple();
         }
 
         public void RemplirTaquin()
@@ -65,50 +64,47 @@ namespace Resolution_taquin
             }
         }
 
-        private void btnInitTaquin_Click(object sender, EventArgs e)
+        private void btnChoixTaquin1_Click(object sender, EventArgs e)
         {
-            genererTaquinExemple();
+            Board[0, 0] = 1;
+            Board[0, 1] = -1;
+            Board[0, 2] = 3;
+            Board[1, 0] = 4;
+            Board[1, 1] = 2;
+            Board[1, 2] = -1;
+            Board[2, 0] = 6;
+            Board[2, 1] = 7;
+            Board[2, 2] = 5;
+
+            RemplirTaquin();
         }
 
-        private void genererTaquinExemple()
+        private void btnChoixTaquin2_Click(object sender, EventArgs e)
         {
-            int alea = r.Next(3);
-            if (alea == 0)
-            {
-                Board[0, 0] = 1;
-                Board[0, 1] = -1;
-                Board[0, 2] = 3;
-                Board[1, 0] = 4;
-                Board[1, 1] = 2;
-                Board[1, 2] = -1;
-                Board[2, 0] = 6;
-                Board[2, 1] = 7;
-                Board[2, 2] = 5;
-            }
-            else if (alea == 1)
-            {
-                Board[0, 0] = -1;
-                Board[0, 1] = 1;
-                Board[0, 2] = 2;
-                Board[1, 0] = -1;
-                Board[1, 1] = 4;
-                Board[1, 2] = 3;
-                Board[2, 0] = 6;
-                Board[2, 1] = 7;
-                Board[2, 2] = 5;
-            }
-            else if (alea == 2)
-            {
-                Board[0, 0] = 7;
-                Board[0, 1] = 1;
-                Board[0, 2] = 4;
-                Board[1, 0] = 5;
-                Board[1, 1] = 6;
-                Board[1, 2] = 3;
-                Board[2, 0] = 2;
-                Board[2, 1] = -1;
-                Board[2, 2] = -1;
-            }
+            Board[0, 0] = -1;
+            Board[0, 1] = 1;
+            Board[0, 2] = 2;
+            Board[1, 0] = -1;
+            Board[1, 1] = 4;
+            Board[1, 2] = 3;
+            Board[2, 0] = 6;
+            Board[2, 1] = 7;
+            Board[2, 2] = 5;
+
+            RemplirTaquin();
+        }
+
+        private void btnChoixTaquin3_Click(object sender, EventArgs e)
+        {
+            Board[0, 0] = 7;
+            Board[0, 1] = 1;
+            Board[0, 2] = 4;
+            Board[1, 0] = 5;
+            Board[1, 1] = 6;
+            Board[1, 2] = 3;
+            Board[2, 0] = 2;
+            Board[2, 1] = -1;
+            Board[2, 2] = -1;
 
             RemplirTaquin();
         }
