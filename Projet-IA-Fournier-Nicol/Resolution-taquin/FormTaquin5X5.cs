@@ -152,15 +152,13 @@ namespace Resolution_taquin
 
         private void btnResoudre_Click(object sender, EventArgs e)
         {
+            lbCoupGagner.Items.Clear();
+            SearchTree g = new SearchTree();
+            NodeTaquin N0 = new NodeTaquin(Board);
+
             var watch = System.Diagnostics.Stopwatch.StartNew();
 
-            SearchTree newTree = new SearchTree();
-            N_ouverts = newTree.RechercheSolutionAEtoile(new NodeTaquin(Board));
-
-            lbCoupGagner.DataSource = N_ouverts;
-
-            lblNbNoeudsOuvertsRes.Text = newTree.CountInOpenList().ToString();
-            lblNbNoeudsFermesRes.Text = newTree.CountInClosedList().ToString();
+            List<GenericNode> Lres = g.RechercheSolutionAEtoile(N0);
 
             watch.Stop();
             TimeSpan ts = watch.Elapsed;
@@ -169,7 +167,16 @@ namespace Resolution_taquin
             ts.Milliseconds / 10);
             lblTempsCalculRes.Text = elapsedTime;
 
-            newTree.GetSearchTree(trArbreExploration);
+            if (Lres.Count != 0)
+            {
+                foreach (GenericNode N in Lres)
+                {
+                    lbCoupGagner.Items.Add(N);
+                }
+                lblNbNoeudsOuvertsRes.Text = g.CountInOpenList().ToString();
+                lblNbNoeudsFermesRes.Text = g.CountInClosedList().ToString();
+                //g.GetSearchTree(trArbreExploration);
+            }
         }
     }
 }

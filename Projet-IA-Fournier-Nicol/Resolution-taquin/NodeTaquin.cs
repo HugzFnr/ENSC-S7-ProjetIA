@@ -107,30 +107,30 @@ namespace Resolution_taquin
                         if (i > 0)
                         {
                             NodeTaquin n1 = new NodeTaquin(switch2numbers(i, j, i - 1, j));
-                            n1.ParentNode = this;
+             //               n1.ParentNode = this;
                             possibilities.Add(n1);
-                            Enfants.Add(n1);
+             //               Enfants.Add(n1);
                         }
                         if (i < sizeTaquin - 1)
                         {
                             NodeTaquin n2 = new NodeTaquin(switch2numbers(i, j, i + 1, j));
-                            n2.ParentNode = this;
+              //              n2.ParentNode = this;
                             possibilities.Add(n2);
-                            Enfants.Add(n2);
+              //              Enfants.Add(n2);
                         }
                         if (j > 0)
                         {
                             NodeTaquin n3 = new NodeTaquin(switch2numbers(i, j, i, j - 1));
-                            n3.ParentNode = this;
+              //              n3.ParentNode = this;
                             possibilities.Add(n3);
-                            Enfants.Add(n3);
+              //              Enfants.Add(n3);
                         }
                         if (j < sizeTaquin -1)
                         {
                             NodeTaquin n4 = new NodeTaquin(switch2numbers(i, j, i, j + 1));
-                            n4.ParentNode = this;
+              //              n4.ParentNode = this;
                             possibilities.Add(n4);
-                            Enfants.Add(n4);
+              //              Enfants.Add(n4);
                         }
                         //then navigates the adjacent existing cells to create new NodeTaquins
                         //then add it to the possibilities list
@@ -166,15 +166,15 @@ namespace Resolution_taquin
             double Hcost = 0;
 
             //Heuristique nb de cases mal remplies
-            //int k = 0;
-            //foreach (int i in state)
-            //{
-            //    k++;
-            //    if (k <= sizeTaquin * sizeTaquin - NbHoles && i != k) Hcost += 1;
-            //}
+            int k = 0;
+            foreach (int i in state)
+            {
+                k++;
+                if (k <= sizeTaquin * sizeTaquin - NbHoles && i != k) Hcost += 1;
+            }
 
             //Heuristique Manhattan
-            endState = new int[sizeTaquin, sizeTaquin];
+            /*endState = new int[sizeTaquin, sizeTaquin];
 
             int k = 0;
             foreach (int i in state)
@@ -209,7 +209,7 @@ namespace Resolution_taquin
                     }
 
                 }
-            }
+            }*/
 
             return Hcost;
 
