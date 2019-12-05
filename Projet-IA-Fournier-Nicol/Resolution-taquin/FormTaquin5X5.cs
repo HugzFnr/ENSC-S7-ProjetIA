@@ -158,7 +158,7 @@ namespace Resolution_taquin
 
             var watch = System.Diagnostics.Stopwatch.StartNew();
 
-            List<GenericNode> Lres = g.RechercheSolutionAEtoile(N0);
+            List<GenericNode> Lres = g.RechercheSolutionAshlag(N0);
 
             watch.Stop();
             TimeSpan ts = watch.Elapsed;

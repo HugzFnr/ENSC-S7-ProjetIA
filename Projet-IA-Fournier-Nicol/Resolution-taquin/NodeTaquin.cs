@@ -156,6 +156,12 @@ namespace Resolution_taquin
             return Tuple.Create(-1, -1);
         }
 
+        public double CalculeShlagCost()
+        {
+            
+            return 0;
+        }
+
         /// <summary>
         /// Returns the heuristic cost of this state
         /// </summary>
