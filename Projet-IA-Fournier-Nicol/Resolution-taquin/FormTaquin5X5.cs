@@ -13,16 +13,10 @@ namespace Resolution_taquin
     public partial class FormTaquin5X5 : Form
     {
         public int[,] Board { get; set; }
-
-        static Random r;
-        List<GenericNode> N_ouverts;
-        List<GenericNode> N_fermes;
         public FormTaquin5X5()
         {
-            InitializeComponent(); Board = new int[5, 5];
-            r = new Random();
-
-            GenererTaquin();
+            InitializeComponent();
+            Board = new int[5, 5];
         }
 
         public void RemplirTaquin()
@@ -54,102 +48,6 @@ namespace Resolution_taquin
             tbTaquin24.Text = Board[4, 4].ToString();
         }
 
-        public void GenererTaquin()
-        {
-            int alea = r.Next(3);
-            if (alea == 0)
-            {
-                Board[0, 0] = 1;
-                Board[0, 1] = 2;
-                Board[0, 2] = 3;
-                Board[0, 3] = 4;
-                Board[0, 4] = 5;
-                Board[1, 0] = -1;
-                Board[1, 1] = 6;
-                Board[1, 2] = 7;
-                Board[1, 3] = 8;
-                Board[1, 4] = 9;
-                Board[2, 0] = 11;
-                Board[2, 1] = 12;
-                Board[2, 2] = 13;
-                Board[2, 3] = 10;
-                Board[2, 4] = -1;
-                Board[3, 0] = 16;
-                Board[3, 1] = 17;
-                Board[3, 2] = 18;
-                Board[3, 3] = 14;
-                Board[3, 4] = 15;
-                Board[4, 0] = 21;
-                Board[4, 1] = 22;
-                Board[4, 2] = 23;
-                Board[4, 3] = 20;
-                Board[4, 4] = 19;
-            }
-            else if (alea == 1)
-            {
-                Board[0, 0] = 8;
-                Board[0, 1] = 1;
-                Board[0, 2] = 9;
-                Board[0, 3] = 10;
-                Board[0, 4] = 2;
-                Board[1, 0] = 18;
-                Board[1, 1] = 15;
-                Board[1, 2] = 21;
-                Board[1, 3] = 22;
-                Board[1, 4] = 17;
-                Board[2, 0] = 12;
-                Board[2, 1] = 13;
-                Board[2, 2] = -1;
-                Board[2, 3] = -1;
-                Board[2, 4] = 23;
-                Board[3, 0] = 19;
-                Board[3, 1] = 4;
-                Board[3, 2] = 20;
-                Board[3, 3] = 16;
-                Board[3, 4] = 3;
-                Board[4, 0] = 6;
-                Board[4, 1] = 7;
-                Board[4, 2] = 11;
-                Board[4, 3] = 14;
-                Board[4, 4] = 5;
-            }
-            else if (alea == 2)
-            {
-                Board[0, 0] = 7;
-                Board[0, 1] = 1;
-                Board[0, 2] = 20;
-                Board[0, 3] = 13;
-                Board[0, 4] = 4;
-                Board[1, 0] = 12;
-                Board[1, 1] = 21;
-                Board[1, 2] = 3;
-                Board[1, 3] = 22;
-                Board[1, 4] = 10;
-                Board[2, 0] = 23;
-                Board[2, 1] = 16;
-                Board[2, 2] = 18;
-                Board[2, 3] = 15;
-                Board[2, 4] = 5;
-                Board[3, 0] = 9;
-                Board[3, 1] = 6;
-                Board[3, 2] = 11;
-                Board[3, 3] = 8;
-                Board[3, 4] = 19;
-                Board[4, 0] = 2;
-                Board[4, 1] = 17;
-                Board[4, 2] = 14;
-                Board[4, 3] = -1;
-                Board[4, 4] = -1;
-            }
-
-            RemplirTaquin();
-        }
-
-        private void btnInitTaquin_Click(object sender, EventArgs e)
-        {
-            GenererTaquin();
-        }
-
         private void btnResoudre_Click(object sender, EventArgs e)
         {
             lbCoupGagner.Items.Clear();
@@ -175,8 +73,101 @@ namespace Resolution_taquin
                 }
                 lblNbNoeudsOuvertsRes.Text = g.CountInOpenList().ToString();
                 lblNbNoeudsFermesRes.Text = g.CountInClosedList().ToString();
-                //g.GetSearchTree(trArbreExploration);
+                g.GetSearchTree(trArbreExploration);
             }
+        }
+
+        private void btnChoixTaquin1_Click(object sender, EventArgs e)
+        {
+            Board[0, 0] = 1;
+            Board[0, 1] = 2;
+            Board[0, 2] = 3;
+            Board[0, 3] = 4;
+            Board[0, 4] = 5;
+            Board[1, 0] = -1;
+            Board[1, 1] = 6;
+            Board[1, 2] = 7;
+            Board[1, 3] = 8;
+            Board[1, 4] = 9;
+            Board[2, 0] = 11;
+            Board[2, 1] = 12;
+            Board[2, 2] = 13;
+            Board[2, 3] = 10;
+            Board[2, 4] = -1;
+            Board[3, 0] = 16;
+            Board[3, 1] = 17;
+            Board[3, 2] = 18;
+            Board[3, 3] = 14;
+            Board[3, 4] = 15;
+            Board[4, 0] = 21;
+            Board[4, 1] = 22;
+            Board[4, 2] = 23;
+            Board[4, 3] = 20;
+            Board[4, 4] = 19;
+
+            RemplirTaquin();
+        }
+
+        private void btnChoixTaquin2_Click(object sender, EventArgs e)
+        {
+            Board[0, 0] = 8;
+            Board[0, 1] = 1;
+            Board[0, 2] = 9;
+            Board[0, 3] = 10;
+            Board[0, 4] = 2;
+            Board[1, 0] = 18;
+            Board[1, 1] = 15;
+            Board[1, 2] = 21;
+            Board[1, 3] = 22;
+            Board[1, 4] = 17;
+            Board[2, 0] = 12;
+            Board[2, 1] = 13;
+            Board[2, 2] = -1;
+            Board[2, 3] = -1;
+            Board[2, 4] = 23;
+            Board[3, 0] = 19;
+            Board[3, 1] = 4;
+            Board[3, 2] = 20;
+            Board[3, 3] = 16;
+            Board[3, 4] = 3;
+            Board[4, 0] = 6;
+            Board[4, 1] = 7;
+            Board[4, 2] = 11;
+            Board[4, 3] = 14;
+            Board[4, 4] = 5;
+
+            RemplirTaquin();
+        }
+
+        private void btnChoixTaquin3_Click(object sender, EventArgs e)
+        {
+            Board[0, 0] = 7;
+            Board[0, 1] = 1;
+            Board[0, 2] = 20;
+            Board[0, 3] = 13;
+            Board[0, 4] = 4;
+            Board[1, 0] = 12;
+            Board[1, 1] = 21;
+            Board[1, 2] = 3;
+            Board[1, 3] = 22;
+            Board[1, 4] = 10;
+            Board[2, 0] = 23;
+            Board[2, 1] = 16;
+            Board[2, 2] = 18;
+            Board[2, 3] = 15;
+            Board[2, 4] = 5;
+            Board[3, 0] = 9;
+            Board[3, 1] = 6;
+            Board[3, 2] = 11;
+            Board[3, 3] = 8;
+            Board[3, 4] = 19;
+            Board[4, 0] = 2;
+            Board[4, 1] = 17;
+            Board[4, 2] = 14;
+            Board[4, 3] = -1;
+            Board[4, 4] = -1;
+
+            RemplirTaquin();
         }
     }
 }
