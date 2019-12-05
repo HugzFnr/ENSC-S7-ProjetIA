@@ -82,7 +82,7 @@
             // 
             this.lblArbreExploration.AutoSize = true;
             this.lblArbreExploration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblArbreExploration.Location = new System.Drawing.Point(495, 78);
+            this.lblArbreExploration.Location = new System.Drawing.Point(692, 78);
             this.lblArbreExploration.Name = "lblArbreExploration";
             this.lblArbreExploration.Size = new System.Drawing.Size(98, 40);
             this.lblArbreExploration.TabIndex = 15;
@@ -93,7 +93,7 @@
             // 
             this.lblCoupGagner.AutoSize = true;
             this.lblCoupGagner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblCoupGagner.Location = new System.Drawing.Point(347, 78);
+            this.lblCoupGagner.Location = new System.Drawing.Point(411, 78);
             this.lblCoupGagner.Name = "lblCoupGagner";
             this.lblCoupGagner.Size = new System.Drawing.Size(91, 40);
             this.lblCoupGagner.TabIndex = 14;
@@ -102,9 +102,9 @@
             // 
             // trArbreExploration
             // 
-            this.trArbreExploration.Location = new System.Drawing.Point(481, 136);
+            this.trArbreExploration.Location = new System.Drawing.Point(608, 136);
             this.trArbreExploration.Name = "trArbreExploration";
-            this.trArbreExploration.Size = new System.Drawing.Size(121, 264);
+            this.trArbreExploration.Size = new System.Drawing.Size(263, 264);
             this.trArbreExploration.TabIndex = 13;
             // 
             // lbCoupGagner
@@ -112,7 +112,7 @@
             this.lbCoupGagner.FormattingEnabled = true;
             this.lbCoupGagner.Location = new System.Drawing.Point(316, 136);
             this.lbCoupGagner.Name = "lbCoupGagner";
-            this.lbCoupGagner.Size = new System.Drawing.Size(133, 264);
+            this.lbCoupGagner.Size = new System.Drawing.Size(259, 264);
             this.lbCoupGagner.TabIndex = 12;
             // 
             // gbResultats
@@ -492,7 +492,7 @@
             this.gbAction.Controls.Add(this.btnChoixTaquin1);
             this.gbAction.Controls.Add(this.lblChoixTaquin);
             this.gbAction.Controls.Add(this.btnResoudre);
-            this.gbAction.Location = new System.Drawing.Point(316, 408);
+            this.gbAction.Location = new System.Drawing.Point(448, 406);
             this.gbAction.Name = "gbAction";
             this.gbAction.Size = new System.Drawing.Size(292, 92);
             this.gbAction.TabIndex = 16;
@@ -555,7 +555,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 512);
+            this.ClientSize = new System.Drawing.Size(883, 512);
             this.Controls.Add(this.gbAction);
             this.Controls.Add(this.lblArbreExploration);
             this.Controls.Add(this.lblCoupGagner);
