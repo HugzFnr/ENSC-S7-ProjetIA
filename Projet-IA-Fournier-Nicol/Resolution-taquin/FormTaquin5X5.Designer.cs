@@ -68,8 +68,11 @@
             this.lblInitTaquin = new System.Windows.Forms.Label();
             this.lblTitre = new System.Windows.Forms.Label();
             this.gbAction = new System.Windows.Forms.GroupBox();
+            this.btnChoixTaquin3 = new System.Windows.Forms.Button();
+            this.btnChoixTaquin2 = new System.Windows.Forms.Button();
+            this.btnChoixTaquin1 = new System.Windows.Forms.Button();
+            this.lblChoixTaquin = new System.Windows.Forms.Label();
             this.btnResoudre = new System.Windows.Forms.Button();
-            this.btnInitTaquin = new System.Windows.Forms.Button();
             this.gbResultats.SuspendLayout();
             this.gbTaquin.SuspendLayout();
             this.gbAction.SuspendLayout();
@@ -484,14 +487,59 @@
             // 
             // gbAction
             // 
+            this.gbAction.Controls.Add(this.btnChoixTaquin3);
+            this.gbAction.Controls.Add(this.btnChoixTaquin2);
+            this.gbAction.Controls.Add(this.btnChoixTaquin1);
+            this.gbAction.Controls.Add(this.lblChoixTaquin);
             this.gbAction.Controls.Add(this.btnResoudre);
-            this.gbAction.Controls.Add(this.btnInitTaquin);
             this.gbAction.Location = new System.Drawing.Point(316, 408);
             this.gbAction.Name = "gbAction";
             this.gbAction.Size = new System.Drawing.Size(292, 92);
             this.gbAction.TabIndex = 16;
             this.gbAction.TabStop = false;
             this.gbAction.Text = "Actions";
+            // 
+            // btnChoixTaquin3
+            // 
+            this.btnChoixTaquin3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChoixTaquin3.Location = new System.Drawing.Point(96, 43);
+            this.btnChoixTaquin3.Name = "btnChoixTaquin3";
+            this.btnChoixTaquin3.Size = new System.Drawing.Size(30, 30);
+            this.btnChoixTaquin3.TabIndex = 11;
+            this.btnChoixTaquin3.Text = "C";
+            this.btnChoixTaquin3.UseVisualStyleBackColor = true;
+            this.btnChoixTaquin3.Click += new System.EventHandler(this.btnChoixTaquin3_Click);
+            // 
+            // btnChoixTaquin2
+            // 
+            this.btnChoixTaquin2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChoixTaquin2.Location = new System.Drawing.Point(60, 43);
+            this.btnChoixTaquin2.Name = "btnChoixTaquin2";
+            this.btnChoixTaquin2.Size = new System.Drawing.Size(30, 30);
+            this.btnChoixTaquin2.TabIndex = 10;
+            this.btnChoixTaquin2.Text = "B";
+            this.btnChoixTaquin2.UseVisualStyleBackColor = true;
+            this.btnChoixTaquin2.Click += new System.EventHandler(this.btnChoixTaquin2_Click);
+            // 
+            // btnChoixTaquin1
+            // 
+            this.btnChoixTaquin1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChoixTaquin1.Location = new System.Drawing.Point(23, 43);
+            this.btnChoixTaquin1.Name = "btnChoixTaquin1";
+            this.btnChoixTaquin1.Size = new System.Drawing.Size(30, 30);
+            this.btnChoixTaquin1.TabIndex = 9;
+            this.btnChoixTaquin1.Text = "A";
+            this.btnChoixTaquin1.UseVisualStyleBackColor = true;
+            this.btnChoixTaquin1.Click += new System.EventHandler(this.btnChoixTaquin1_Click);
+            // 
+            // lblChoixTaquin
+            // 
+            this.lblChoixTaquin.AutoSize = true;
+            this.lblChoixTaquin.Location = new System.Drawing.Point(35, 22);
+            this.lblChoixTaquin.Name = "lblChoixTaquin";
+            this.lblChoixTaquin.Size = new System.Drawing.Size(80, 13);
+            this.lblChoixTaquin.TabIndex = 8;
+            this.lblChoixTaquin.Text = "Choix du taquin";
             // 
             // btnResoudre
             // 
@@ -502,16 +550,6 @@
             this.btnResoudre.Text = "Résoudre";
             this.btnResoudre.UseVisualStyleBackColor = true;
             this.btnResoudre.Click += new System.EventHandler(this.btnResoudre_Click);
-            // 
-            // btnInitTaquin
-            // 
-            this.btnInitTaquin.Location = new System.Drawing.Point(35, 34);
-            this.btnInitTaquin.Name = "btnInitTaquin";
-            this.btnInitTaquin.Size = new System.Drawing.Size(98, 39);
-            this.btnInitTaquin.TabIndex = 0;
-            this.btnInitTaquin.Text = "Initialiser le taquin";
-            this.btnInitTaquin.UseVisualStyleBackColor = true;
-            this.btnInitTaquin.Click += new System.EventHandler(this.btnInitTaquin_Click);
             // 
             // FormTaquin5X5
             // 
@@ -534,6 +572,7 @@
             this.gbTaquin.ResumeLayout(false);
             this.gbTaquin.PerformLayout();
             this.gbAction.ResumeLayout(false);
+            this.gbAction.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -582,6 +621,9 @@
         private System.Windows.Forms.Label lblTitre;
         private System.Windows.Forms.GroupBox gbAction;
         private System.Windows.Forms.Button btnResoudre;
-        private System.Windows.Forms.Button btnInitTaquin;
+        private System.Windows.Forms.Button btnChoixTaquin3;
+        private System.Windows.Forms.Button btnChoixTaquin2;
+        private System.Windows.Forms.Button btnChoixTaquin1;
+        private System.Windows.Forms.Label lblChoixTaquin;
     }
 }
