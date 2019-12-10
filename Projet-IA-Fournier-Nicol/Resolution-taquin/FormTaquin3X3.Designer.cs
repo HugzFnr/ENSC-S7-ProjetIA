@@ -309,35 +309,38 @@
             // 
             // btnChoixTaquin3
             // 
+            this.btnChoixTaquin3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnChoixTaquin3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChoixTaquin3.Location = new System.Drawing.Point(92, 37);
             this.btnChoixTaquin3.Name = "btnChoixTaquin3";
             this.btnChoixTaquin3.Size = new System.Drawing.Size(30, 30);
             this.btnChoixTaquin3.TabIndex = 7;
             this.btnChoixTaquin3.Text = "C";
-            this.btnChoixTaquin3.UseVisualStyleBackColor = true;
+            this.btnChoixTaquin3.UseVisualStyleBackColor = false;
             this.btnChoixTaquin3.Click += new System.EventHandler(this.btnChoixTaquin3_Click);
             // 
             // btnChoixTaquin2
             // 
+            this.btnChoixTaquin2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnChoixTaquin2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChoixTaquin2.Location = new System.Drawing.Point(56, 37);
             this.btnChoixTaquin2.Name = "btnChoixTaquin2";
             this.btnChoixTaquin2.Size = new System.Drawing.Size(30, 30);
             this.btnChoixTaquin2.TabIndex = 6;
             this.btnChoixTaquin2.Text = "B";
-            this.btnChoixTaquin2.UseVisualStyleBackColor = true;
+            this.btnChoixTaquin2.UseVisualStyleBackColor = false;
             this.btnChoixTaquin2.Click += new System.EventHandler(this.btnChoixTaquin2_Click);
             // 
             // btnChoixTaquin1
             // 
+            this.btnChoixTaquin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnChoixTaquin1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChoixTaquin1.Location = new System.Drawing.Point(19, 37);
             this.btnChoixTaquin1.Name = "btnChoixTaquin1";
             this.btnChoixTaquin1.Size = new System.Drawing.Size(30, 30);
             this.btnChoixTaquin1.TabIndex = 5;
             this.btnChoixTaquin1.Text = "A";
-            this.btnChoixTaquin1.UseVisualStyleBackColor = true;
+            this.btnChoixTaquin1.UseVisualStyleBackColor = false;
             this.btnChoixTaquin1.Click += new System.EventHandler(this.btnChoixTaquin1_Click);
             // 
             // lblChoixTaquin
@@ -351,18 +354,20 @@
             // 
             // btnResoudre
             // 
+            this.btnResoudre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnResoudre.Location = new System.Drawing.Point(164, 34);
             this.btnResoudre.Name = "btnResoudre";
             this.btnResoudre.Size = new System.Drawing.Size(98, 39);
             this.btnResoudre.TabIndex = 3;
             this.btnResoudre.Text = "Résoudre";
-            this.btnResoudre.UseVisualStyleBackColor = true;
+            this.btnResoudre.UseVisualStyleBackColor = false;
             this.btnResoudre.Click += new System.EventHandler(this.btnResoudre_Click);
             // 
             // FormTaquin3X3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(579, 428);
             this.Controls.Add(this.gbActions);
             this.Controls.Add(this.lblArbreExploration);
@@ -373,11 +378,11 @@
             this.Controls.Add(this.gbTaquin);
             this.Controls.Add(this.lblInitTaquin);
             this.Controls.Add(this.lblTitre);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormTaquin3X3";
-            this.Text = "Résolution de taquin 3X3";
+            this.Text = "Résolution 3x3 : Projet IA - Fournier Nicol";
             this.gbTaquin.ResumeLayout(false);
             this.gbTaquin.PerformLayout();
             this.gbResultats.ResumeLayout(false);

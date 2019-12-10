@@ -35,24 +35,26 @@
             // 
             // btnTaquin3X3
             // 
+            this.btnTaquin3X3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnTaquin3X3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnTaquin3X3.Location = new System.Drawing.Point(74, 97);
             this.btnTaquin3X3.Name = "btnTaquin3X3";
             this.btnTaquin3X3.Size = new System.Drawing.Size(150, 50);
             this.btnTaquin3X3.TabIndex = 0;
             this.btnTaquin3X3.Text = "Taquin 3x3";
-            this.btnTaquin3X3.UseVisualStyleBackColor = true;
+            this.btnTaquin3X3.UseVisualStyleBackColor = false;
             this.btnTaquin3X3.Click += new System.EventHandler(this.btnTaquin3X3_Click);
             // 
             // btnTaquin5X5
             // 
+            this.btnTaquin5X5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnTaquin5X5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnTaquin5X5.Location = new System.Drawing.Point(74, 172);
             this.btnTaquin5X5.Name = "btnTaquin5X5";
             this.btnTaquin5X5.Size = new System.Drawing.Size(150, 50);
             this.btnTaquin5X5.TabIndex = 1;
             this.btnTaquin5X5.Text = "Taquin 5x5";
-            this.btnTaquin5X5.UseVisualStyleBackColor = true;
+            this.btnTaquin5X5.UseVisualStyleBackColor = false;
             this.btnTaquin5X5.Click += new System.EventHandler(this.btnTaquin5X5_Click);
             // 
             // lblTitre
@@ -70,11 +72,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.lblTitre);
             this.Controls.Add(this.btnTaquin5X5);
             this.Controls.Add(this.btnTaquin3X3);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
