@@ -190,7 +190,7 @@
             this.gbResultats.Controls.Add(this.lblTempsCalcul);
             this.gbResultats.Location = new System.Drawing.Point(12, 324);
             this.gbResultats.Name = "gbResultats";
-            this.gbResultats.Size = new System.Drawing.Size(192, 92);
+            this.gbResultats.Size = new System.Drawing.Size(224, 92);
             this.gbResultats.TabIndex = 3;
             this.gbResultats.TabStop = false;
             this.gbResultats.Text = "Résultats";
