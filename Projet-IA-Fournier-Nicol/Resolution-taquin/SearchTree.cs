@@ -101,7 +101,7 @@ namespace Resolution_taquin
         /// </summary>
         /// <param name="N0"></param>
         /// <returns></returns>
-        public List<GenericNode> RechercheSolutionAshlag(GenericNode N0)
+        public List<GenericNode> RechercheSolutionAttrapay(GenericNode N0)
         {
             L_Ouverts = new List<GenericNode>();
             L_Fermes = new List<GenericNode>();
